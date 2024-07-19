@@ -2,6 +2,8 @@ package bg.rentcarreviewrest.model.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "reviews")
 public class Review {
@@ -10,10 +12,23 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
-    private int rating;
+
+    @Column(nullable = false)
+    private Integer rating;
+
+    @Column(nullable = false)
     private String description;
+
+    @Column(nullable = false)
     private String author;
+
+    @Column(nullable = false)
+    private Long userId;
+
+    @Column(nullable = false)
+    private LocalDate published;
 
     public Long getId() {
         return id;
@@ -31,11 +46,11 @@ public class Review {
         this.title = title;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 
@@ -53,5 +68,21 @@ public class Review {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public LocalDate getPublished() {
+        return published;
+    }
+
+    public void setPublished(LocalDate published) {
+        this.published = published;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

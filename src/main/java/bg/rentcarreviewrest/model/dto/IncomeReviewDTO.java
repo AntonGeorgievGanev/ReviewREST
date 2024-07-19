@@ -1,10 +1,14 @@
 package bg.rentcarreviewrest.model.dto;
 
+import java.time.LocalDate;
+
 public class IncomeReviewDTO {
     private String title;
-    private int rating;
+    private Integer rating;
     private String description;
     private String author;
+    private Long userId;
+    private LocalDate published;
 
     public String getTitle() {
         return title;
@@ -14,11 +18,11 @@ public class IncomeReviewDTO {
         this.title = title;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(Integer rating) {
         this.rating = rating;
     }
 
@@ -36,5 +40,21 @@ public class IncomeReviewDTO {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public LocalDate getPublished() {
+        return published;
+    }
+
+    public void setPublished(LocalDate published) {
+        this.published = published;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
