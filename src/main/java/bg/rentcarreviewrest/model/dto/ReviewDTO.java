@@ -3,12 +3,21 @@ package bg.rentcarreviewrest.model.dto;
 import java.time.LocalDate;
 
 public class ReviewDTO {
+    private Long id;
     private String title;
     private Integer rating;
     private String description;
     private String author;
     private Long userId;
     private LocalDate published;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
