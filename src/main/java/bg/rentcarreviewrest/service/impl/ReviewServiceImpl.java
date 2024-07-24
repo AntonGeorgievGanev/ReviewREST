@@ -1,5 +1,6 @@
 package bg.rentcarreviewrest.service.impl;
 
+import bg.rentcarreviewrest.exception.ObjectNotFound;
 import bg.rentcarreviewrest.model.dto.IncomeReviewDTO;
 import bg.rentcarreviewrest.model.dto.ReviewDTO;
 import bg.rentcarreviewrest.model.entity.Review;
@@ -32,7 +33,7 @@ public class ReviewServiceImpl implements ReviewService {
     public ReviewDTO getReviewById(Long id) {
         return reviewRepository.findById(id)
                 .map(reviewFromDB -> modelMapper.map(reviewFromDB, ReviewDTO.class))
-                .orElseThrow(() -> new IllegalArgumentException("Not found!"));
+                .orElseThrow(() -> new ObjectNotFound("This review cannot be found!"));
     }
 
     @Override
