@@ -38,6 +38,10 @@ public class Review {
         this.id = id;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -54,9 +58,7 @@ public class Review {
         this.rating = rating;
     }
 
-    public String getDescription() {
-        return description;
-    }
+
 
     public void setDescription(String description) {
         this.description = description;

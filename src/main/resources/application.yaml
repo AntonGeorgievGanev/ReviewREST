@@ -9,6 +9,7 @@ spring:
     init:
       mode: never
 
+
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     defer-datasource-initialization: true
